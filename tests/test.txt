@@ -1,0 +1,10 @@
+char foo;
+char* foo;
+char foo[5];
+char* foo[5];
+char (*foo)[5];
+char* (*foo)[5];
+char* foo(char*);
+char* (*foo)(char*);
+char* (*foo[5])(char*);
+char* (*(*foo[5])(char*))[];
