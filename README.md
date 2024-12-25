@@ -68,6 +68,11 @@ The middle part is filled based on operator precedence rules:-
 
 ### Tokenize
 
+Tokenise the whole string input tokens like TYPE (for `char`, `int`, `const`), POINTER (for `*`), IDENTIFIER etc.
+
+I am using `ply` lexer library of python to save my time and efforts :) which do the task of tokenising for me.
+
+### Make sense out of tokens
 
 
 ## Why Py

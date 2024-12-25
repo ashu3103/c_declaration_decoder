@@ -1,1 +1,1 @@
-char* const *(*next)();
+char* const *(*next[5])();
