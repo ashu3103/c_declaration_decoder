@@ -1,4 +1,3 @@
-from constants import *
 from ply import lex
 
 tokens = (

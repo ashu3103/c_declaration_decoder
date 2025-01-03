@@ -1,0 +1,5 @@
+/home/ashu3103/Desktop/c_declaration_decoder/logs/logs.txt
+[('TYPE', 'char'), ('POINTER', '*'), ('LPAREN', '('), ('POINTER', '*'), ('LPAREN', '('), ('IDENTIFIER', 'next'), ('LPAREN', '('), ('RPAREN', ')'), ('RPAREN', ')'), ('LPAREN', '('), ('RPAREN', ')'), ('LPAREN', '('), ('LPAREN', '('), ('RPAREN', ')'), ('RPAREN', ')'), ('RPAREN', ')'), ('LPAREN', '('), ('RPAREN', ')')]
+(2, 15)
+(4, 8)
+None
