@@ -1,4 +1,4 @@
-from basic import BasicI
+from .basic import BasicI
 
 
 class Declarator(BasicI):

@@ -1,4 +1,4 @@
-from basic import BasicT
+from .basic import BasicT
 
 class Array(BasicT):
     def __init__(self, type, message, size):

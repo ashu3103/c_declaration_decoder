@@ -1,4 +1,4 @@
-from basic import BasicT
+from .basic import BasicT
 
 class Type(BasicT):
     def __init__(self, type, message, sub_type):
