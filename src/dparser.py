@@ -8,7 +8,7 @@ from objects.declarator import Declarator
 from constants import *
 from utils import *
 
-def dec_parser(tokens, l, r):
+def dec_parser(tokens, l, r) -> Declarator:
     mid = Declarator(TokenType.DECLARATOR)
     # Create right node -> can be only [x] | (x)
     if (tokens[r][1] == '['):
@@ -34,7 +34,7 @@ def dec_parser(tokens, l, r):
     left.right = mid
     return mid
 
-def iden_parser(tokens, l, r):
+def iden_parser(tokens, l, r) -> Identifier:
     mid = Identifier(TokenType.IDENTIFIER, f'{tokens[l+1][1]} is')
     # Create right node -> can be only [x] | (x)
     if (tokens[r][1] == '['):

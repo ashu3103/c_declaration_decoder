@@ -3,32 +3,32 @@ from utils import *
 from dparser import *
 from constants import *
 import os
+import copy
 
 logs_path = os.path.join(os.path.join(os.getcwd(), 'logs'), 'logs.txt')
 
-ipt = 'char* const next[4]'
+ipt = 'char* (*(*foo[5])(char))[]'
 
 if __name__ == '__main__':
     with open(logs_path, 'w') as f:
         print(logs_path, file=f)
         tokens = tokenize(ipt)
         print(tokens, file=f)
-        
-        while(mb := matchBrackets(tokens)):
-            print(mb, file=f)
-        head = iden_parser(tokens, getIdentifierIndex(tokens)-1, getIdentifierIndex(tokens)+1)
+        original_tokens = copy.deepcopy(tokens)
+        prev_l = 0
+        curr = None
+        head = None
+        while(mb := matchBrackets(original_tokens)):
+            curr = dec_parser(tokens, mb[0]-prev_l-1, mb[1]-prev_l+1)
+            tokens = tokens[mb[0]-prev_l+1:mb[1]-prev_l]
+            prev_l = mb[0]+1
+            curr.parent = head
+            head = curr
+        curr = iden_parser(tokens, getIdentifierIndex(tokens)-1, getIdentifierIndex(tokens)+1)
+        curr.parent = head
+        head = curr
 
-        # show result
         ans = ""
-        curr = head
-        ans = ans + curr.printMessage()
-          ## Jump to right
-        if (curr := curr.right):
-            ans = ans + " " + curr.printMessage()
-            curr = head
-        while (curr := curr.left):
-            ans = ans + " " + curr.printMessage()
-        
         print(ans, file=f)
 
 
