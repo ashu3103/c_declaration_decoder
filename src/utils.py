@@ -39,3 +39,10 @@ def matchBrackets(tokens):
     else:
         matchBrackets.next = matchBrackets.next + 1
         return list(matchBrackets.match_bracket.items())[matchBrackets.next]
+
+def concatString(str1: str, str2: str) -> str:
+    if (not str1 or str1 == ""):
+        return str2
+    if (not str2 or str2 == ""):
+        return str1
+    return str1 + " " + str2
